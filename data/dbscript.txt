@@ -1,14 +1,25 @@
 # Database 생성
 mysql -u root –p
+# 데이터베이스 보기
 show databases;
+# 사용
 use mysql;
+# Db 생성
 create database python_db;
+# user 파이썬, password는 python 계정 생성
 create user 'python'@'%' identified by 'python';
+# python 계정에 python_db에 대한 권한 부여
 grant all privileges on python_db.* to 'python'@'%';
+# 권한 부여 db에 바로 적용
 flush privileges;
+# user 생성 확인
 select user, host from user;
 exit;
 
+# 계정 비번 python
 mysql -u python -p
+# 현재 계정의 권한 확인
 show grants for current_user;
 use python_db;
+# table 목록 확인
+show tables;
